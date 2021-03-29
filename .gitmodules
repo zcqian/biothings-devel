@@ -1,0 +1,8 @@
+[submodule "biothings.api"]
+	path = biothings.api
+	url = git@github.com:zcqian/biothings.api.git
+	branch = master
+[submodule "myvariant.info"]
+	path = myvariant.info
+	url = git@github.com:zcqian/myvariant.info.git
+	branch = master
