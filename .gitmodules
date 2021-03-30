@@ -6,3 +6,7 @@
 	path = myvariant.info
 	url = git@github.com:zcqian/myvariant.info.git
 	branch = master
+[submodule "outbreak.api"]
+	path = outbreak.api
+	url = git@github.com:outbreak-info/outbreak.api.git
+	branch = master
