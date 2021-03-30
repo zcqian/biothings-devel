@@ -12,5 +12,5 @@ RUN npm install && npm run build --legacy-peer-deps
 FROM nginx:mainline-alpine
 EXPOSE 80/tcp
 COPY --from=build --chown=root:www-data /build/src/github.com/biothings/biothings_studio/webapp/dist /srv/www/webapp
-COPY files/webapp.conf /etc/nginx/conf.d/default.conf
+COPY webapp.conf /etc/nginx/conf.d/default.conf
 

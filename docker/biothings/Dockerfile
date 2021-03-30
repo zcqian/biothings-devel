@@ -18,4 +18,3 @@ ENV HUB_URI=mongodb://mongodb:27017
 ENV HUB_DB=biothings_hub
 
 CMD [ "sleep", "infinity" ]
-

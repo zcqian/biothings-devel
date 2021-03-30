@@ -9,8 +9,8 @@ services:
       - discovery.type=single-node
   webapp:
     build:
-      context: .
-      dockerfile: Dockerfile.webapp
+      context: webapp
+      dockerfile: Dockerfile
       args:
         WEBAPP_GIT: https://github.com/biothings/biothings_studio.git
         GIT_CHECKOUT: master
@@ -18,12 +18,13 @@ services:
       - "127.0.0.1:8080:80"
   biothings:
     build:
-      context: .
-      dockerfile: Dockerfile.biothings
+      context: biothings
+      dockerfile: Dockerfile
     init: true
     depends_on:
       - "mongodb"
       - "elasticsearch"
+      - "webapp"
     volumes:
       # Forwards the local Docker socket to the container.
       # This is required because the docker extension in VSC needs it.
