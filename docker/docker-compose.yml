@@ -16,21 +16,22 @@ services:
         GIT_CHECKOUT: master
     ports:
       - "127.0.0.1:8080:80"
+
   biothings:
     build:
-      context: biothings
-      dockerfile: Dockerfile
+      context: ../
+      dockerfile: docker/biothings/Dockerfile
     init: true
     depends_on:
       - "mongodb"
       - "elasticsearch"
       - "webapp"
-    volumes:
-      # Forwards the local Docker socket to the container.
-      # This is required because the docker extension in VSC needs it.
-      # - /var/run/docker.sock:/var/run/docker-host.sock
-      # Update this to wherever you want VS Code to mount the folder of your project
-      - ..:/biothings
+#    volumes:
+#      # Forwards the local Docker socket to the container.
+#      # This is required because the docker extension in VSC needs it.
+#      # - /var/run/docker.sock:/var/run/docker-host.sock
+#      # Update this to wherever you want VS Code to mount the folder of your project
+#      - ..:/biothings
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity

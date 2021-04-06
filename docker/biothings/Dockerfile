@@ -17,4 +17,10 @@ ENV TARGET_DB=biothings_target
 ENV HUB_URI=mongodb://mongodb:27017
 ENV HUB_DB=biothings_hub
 
+WORKDIR /biothings
+
+ADD ./docker/biothings/configs/* .
+ADD . .
+
+
 CMD [ "sleep", "infinity" ]
