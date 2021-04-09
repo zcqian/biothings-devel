@@ -10,3 +10,8 @@
 	path = outbreak.api
 	url = git@github.com:outbreak-info/outbreak.api.git
 	branch = master
+[submodule "mygeneset.info"]
+	path = mygeneset.info
+	url = git@github.com:biothings/mygeneset.info.git
+        branch = master
+
