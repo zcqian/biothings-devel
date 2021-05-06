@@ -15,3 +15,9 @@
 	url = git@github.com:biothings/mygeneset.info.git
         branch = master
 
+[submodule "mychem.info"]
+	path = mychem.info
+	url = git@github.com:biothings/mychem.info.git
+[submodule "mydisease.info"]
+	path = mydisease.info
+	url = git@github.com:biothings/mydisease.info.git

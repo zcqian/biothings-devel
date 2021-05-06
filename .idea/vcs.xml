@@ -3,6 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/biothings.api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mychem.info" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mydisease.info" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/mygeneset.info" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/myvariant.info" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/outbreak.api" vcs="Git" />
