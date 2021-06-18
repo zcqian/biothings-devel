@@ -21,3 +21,6 @@
 [submodule "mydisease.info"]
 	path = mydisease.info
 	url = git@github.com:biothings/mydisease.info.git
+[submodule "mygene.info"]
+	path = mygene.info
+	url = git@github.com:biothings/mygene.info.git
