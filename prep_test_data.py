@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Test Data Prep Tool
 
@@ -147,12 +149,29 @@ class MiniClient:
         if len(resp) != 1:
             logging.warning("%s is alias with more than one index?", index)
         resp = next(iter(resp.values()))  # pull the value
-        if 'analysis' in resp["settings"]["index"]:
-            resp["settings"]["index"] = {
-                "analysis": resp["settings"]["index"]["analysis"]
-            }
-        else:
-            resp["settings"]["index"] = {}
+        static_settings = (
+            'number_of_shards',
+            'number_of_routing_shards',
+            'shard',
+            'codec',
+            'routing_partition_size',
+            'soft_deletes',
+            'load_fixed_bitset_filters_eagerly',
+            'hidden',
+        )
+        delete_settings = (
+            'provided_name',
+            'creation_date',
+            'uuid',
+            'version',
+            'number_of_replicas',
+        )
+        for k in static_settings + delete_settings:
+            r = resp['settings']['index'].pop(
+                k, None
+                )
+            if r:
+                logging.info("key settings.index.%s deleted", k)
         return resp
 
     def clear_scroll(self, scroll_id: str) -> None:
